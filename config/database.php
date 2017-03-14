@@ -43,7 +43,7 @@ return [
             'driver' => 'mysql',
             'host' => '127.0.0.1',
             'port' => env('DB_PORT', '3306'),
-            'database' => 'madness2017',
+            'database' => 'madness2017Forge',
             'username' => 'root',
             'password' => '',
             'charset' => 'utf8',
