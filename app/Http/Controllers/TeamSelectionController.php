@@ -45,7 +45,7 @@ class TeamSelectionController extends Controller
     	$specialTR = $_POST['specialTR'];
     	$specialBR = $_POST['specialBR'];
 
-    	if($grandpaTL == 1 && ($grandpaBL == 17 || $grandpaTR == 33 || $grandpaBR == 49) || $grandpaBL == 17 && ($grandpaTL == 1 || $grandpaTR == 33 || $grandpaBR == 49) || $grandpaTR == 33 && ($grandpaTL == 1 || $grandpaBL == 17 || $grandpaBR == 49) || $grandpaBR == 49 && ($grandpaTL == 1 || $grandpaBL == 17 || $$grandpaTR == 33)) {
+    	if($grandpaTL == 1 && ($grandpaBL == 17 || $grandpaTR == 33 || $grandpaBR == 49) || $grandpaBL == 17 && ($grandpaTL == 1 || $grandpaTR == 33 || $grandpaBR == 49) || $grandpaTR == 33 && ($grandpaTL == 1 || $grandpaBL == 17 || $grandpaBR == 49) || $grandpaBR == 49 && ($grandpaTL == 1 || $grandpaBL == 17 || $grandpaTR == 33)) {
     		return redirect('/pickTeams')
                         ->withErrors('You can only Pick one team with a 1 seed')
                         ->withInput();
