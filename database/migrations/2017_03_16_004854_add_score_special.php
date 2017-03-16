@@ -15,6 +15,7 @@ class AddScoreSpecial extends Migration
     {
         Schema::table('specials', function (Blueprint $table) {
             $table->Integer('score')->nullable();
+        });
     }
 
     /**
@@ -26,5 +27,6 @@ class AddScoreSpecial extends Migration
     {
         Schema::table('specials', function (Blueprint $table) {
             $table->dropColumn('score');
+        });
     }
 }
