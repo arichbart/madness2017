@@ -9,6 +9,7 @@
                 <a class="navbar-brand" href="/pickTeams">Make Selections</a>
                 <a class="navbar-brand" href="/myTeams">My Teams</a>
                 <a class="navbar-brand" href="#">Scoreboard</a>
+                <a class="navbar-brand" href="/best">Best Teams</a>
             </nav>
             <h1 class="text-center">Scoreboard</h1> <br>
         </div>
@@ -27,9 +28,9 @@
                 <tr> 
                     <td><strong>{{ $team->getUser->name }}</strong></td>
                     <td <?php if ( $team->team1->eliminated == 1) { echo "class='danger'";}  ?> >{{ $team->team1->team_name }} {{ $team->team1->seed }}</td>
-                    <td <?php if ( $team->team1->eliminated == 2) { echo "class='danger'";}  ?> >{{ $team->team2->team_name }} {{ $team->team2->seed }}</td>
-                    <td <?php if ( $team->team1->eliminated == 3) { echo "class='danger'";}  ?> >{{ $team->team3->team_name }} {{ $team->team3->seed }}</td>
-                    <td <?php if ( $team->team1->eliminated == 4) { echo "class='danger'";}  ?> >{{ $team->team4->team_name }} {{ $team->team4->seed }}</td>
+                    <td <?php if ( $team->team1->eliminated == 1) { echo "class='danger'";}  ?> >{{ $team->team2->team_name }} {{ $team->team2->seed }}</td>
+                    <td <?php if ( $team->team1->eliminated == 1) { echo "class='danger'";}  ?> >{{ $team->team3->team_name }} {{ $team->team3->seed }}</td>
+                    <td <?php if ( $team->team1->eliminated == 1) { echo "class='danger'";}  ?> >{{ $team->team4->team_name }} {{ $team->team4->seed }}</td>
                     <td>{{ $team->score }}</td>
                 </tr>
                 @endforeach

@@ -9,6 +9,7 @@
                 <a class="navbar-brand" href="/pickTeams">Make Selections</a>
                 <a class="navbar-brand" href="#">My Teams</a>
                 <a class="navbar-brand" href="/scoreboard">Scoreboard</a>
+                <a class="navbar-brand" href="/best">Best Teams</a>
             </nav>
             <h1 class="text-center">My Teams</h1> <br>
             <div class="col-md-6">

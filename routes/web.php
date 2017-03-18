@@ -22,6 +22,8 @@ route::get('/myTeams', 'TeamSelectionController@showMyTeams');
 
 route::get('/scoreboard', 'ScoringController@index');
 
+route::get('/best', 'BestTeams@getTeamScores');
+
 
 
 Auth::routes();

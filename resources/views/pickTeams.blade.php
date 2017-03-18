@@ -9,6 +9,7 @@
                 <a class="navbar-brand" href="#">Make Selections</a>
                 <a class="navbar-brand" href="/myTeams">My Teams</a>
                 <a class="navbar-brand" href="/scoreboard">Scoreboard</a>
+                <a class="navbar-brand" href="/best">Best Teams</a>
             </nav>
             <h1 class="text-center">Pick Your Teams</h1> <br>
             <h4 class="text-center col-md-8 col-md-offset-2">If you've already made your selections you can modify them here until the first game starts on Thursday.  Clicking submit at the bottom will overwrite your old picks with your new selections.</h4>
