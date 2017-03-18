@@ -28,9 +28,9 @@
                 <tr> 
                     <td><strong>{{ $team->getUser->name }}</strong></td>
                     <td <?php if ( $team->team1->eliminated == 1) { echo "class='danger'";}  ?> >{{ $team->team1->team_name }} {{ $team->team1->seed }}</td>
-                    <td <?php if ( $team->team1->eliminated == 1) { echo "class='danger'";}  ?> >{{ $team->team2->team_name }} {{ $team->team2->seed }}</td>
-                    <td <?php if ( $team->team1->eliminated == 1) { echo "class='danger'";}  ?> >{{ $team->team3->team_name }} {{ $team->team3->seed }}</td>
-                    <td <?php if ( $team->team1->eliminated == 1) { echo "class='danger'";}  ?> >{{ $team->team4->team_name }} {{ $team->team4->seed }}</td>
+                    <td <?php if ( $team->team2->eliminated == 1) { echo "class='danger'";}  ?> >{{ $team->team2->team_name }} {{ $team->team2->seed }}</td>
+                    <td <?php if ( $team->team3->eliminated == 1) { echo "class='danger'";}  ?> >{{ $team->team3->team_name }} {{ $team->team3->seed }}</td>
+                    <td <?php if ( $team->team4->eliminated == 1) { echo "class='danger'";}  ?> >{{ $team->team4->team_name }} {{ $team->team4->seed }}</td>
                     <td>{{ $team->score }}</td>
                 </tr>
                 @endforeach
