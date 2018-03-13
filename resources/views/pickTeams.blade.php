@@ -15,11 +15,13 @@
             <h4 class="text-center col-md-8 col-md-offset-2">If you've already made your selections you can modify them here until the first game starts on Thursday.  Clicking submit at the bottom will overwrite your old picks with your new selections.</h4>
             <h2 class="text-center col-md-12">Grandpa Scoring</h2>
             <legend></legend>
-            <strong>Rules:</strong> Select one team from each region.  <u>You can only select one team with a 1 seed.</u>  You can select more than one of every other seed. <br> <br>
+            <div class="text-center col-md-12">
+                <strong>Rules:</strong> Select one team from each region.  <u>You can only select one team with a 1 seed.</u>  You can select more than one of every other seed. <br> <br>
 
-            <strong>Scoring:</strong> Each round that your team wins you score 1 point. (This score will be multiplied by 6 for the overall score) <br> <br>
+                <strong>Scoring:</strong> Each round that your team wins you score 1 point. (This score will be multiplied by 6 for the overall score) <br> <br>
 
-            <strong>Example:</strong> Duke, a number 2 seed, wins in round 1...you recieve 1 point.  They win in round 2...you receive an additional 1 point. etc... <br> <br>
+                <strong>Example:</strong> Duke, a number 2 seed, wins in round 1...you recieve 1 point.  They win in round 2...you receive an additional 1 point. etc... <br> <br>
+            </div>
             @if (count($errors) > 0)
                 <div class="alert alert-danger">
                     <ul>
@@ -32,7 +34,7 @@
             <form action="/myTeams" method="POST">
             {{ csrf_field() }}
                 <div class="col-md-6 form-group">
-                    <h3 class="text-center">East</h3>
+                    <h3 class="text-center">South</h3>
                     <select class="form-control" name="grandpaTL"> 
                         <?php $x=1; ?>
                         @foreach ($topLeft as $team)
@@ -51,7 +53,7 @@
                     </select>
                 </div>
                 <div class="col-md-6 form-group">
-                    <h3 class="text-center">Midwest</h3>
+                    <h3 class="text-center">East</h3>
                     <select class="form-control" name="grandpaTR"> 
                         <?php $x=33; ?>
                         @foreach ($bottomLeft as $team)
@@ -60,7 +62,7 @@
                         @endforeach
                     </select>
                     <br>
-                    <h3 class="text-center">South</h3>
+                    <h3 class="text-center">Midwest</h3>
                     <select class="form-control" name="grandpaBR"> 
                         <?php $x=49; ?>
                         @foreach ($bottomRight as $team)
@@ -79,7 +81,7 @@
                 <strong>Example:</strong> Duke, a number 2 seed, wins in round 1...you recieve 2 points.  They win in round 2...you receive an additional 4 points.  They win in round 3...you receive an additional 6 points. etc... <br> <br>
                 </div>
                 <div class="col-md-6 form-group">
-                    <h3 class="text-center">East</h3>
+                    <h3 class="text-center">South</h3>
                     <select class="form-control" name="specialTL"> 
                         <?php $x=1; ?>
                         @foreach ($topLeft as $team)
@@ -98,7 +100,7 @@
                     </select>
                 </div>
                 <div class="col-md-6 form-group">
-                    <h3 class="text-center">Midwest</h3>
+                    <h3 class="text-center">East</h3>
                     <select class="form-control" name="specialTR"> 
                         <?php $x=33; ?>
                         @foreach ($bottomLeft as $team)
@@ -107,7 +109,7 @@
                         @endforeach
                     </select>
                     <br>
-                    <h3 class="text-center">South</h3>
+                    <h3 class="text-center">Midwest</h3>
                     <select class="form-control" name="specialBR"> 
                         <?php $x=49; ?>
                         @foreach ($bottomRight as $team)
