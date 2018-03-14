@@ -20,9 +20,9 @@ class CreateTeamsTable extends Migration
             $table->Integer('region_id');
             $table->Integer('seed');
             $table->Integer('wins');
-            $table->Integer('grandpa_points');
-            $table->Integer('seeded_points');
-            $table->Integer('eliminated');
+            $table->Integer('grandpa_points')->nullable();
+            $table->Integer('seeded_points')->nullable();
+            $table->Integer('eliminated')->nullable();
         });
     }
 
