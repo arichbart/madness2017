@@ -62,7 +62,7 @@ class ScoringController extends Controller
     	$grandpa = grandpa::all();
     	$special = special::all();
     	$now = carbon::now();
-    	if ($now < "2017-03-16 16:15:00.000000") {
+    	if ($now < "2018-03-15 16:15:00.000000") {
     		return redirect('/home')
                         ->withErrors('Scoreboard will be available after the first game begins on Thursday at 12:15pm Eastern');
     	} else {
