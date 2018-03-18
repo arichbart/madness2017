@@ -58,6 +58,7 @@ class ScoringController extends Controller
             $userScore->overall_total = $userScore->grandpa_score_total + $userScore->seeded_score_total;
             $userScore->save();
         }
+
         $totals = overall::all();
     	$grandpa = grandpa::all();
     	$special = special::all();
