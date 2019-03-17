@@ -23,7 +23,7 @@
                 <strong>Example:</strong> Duke, a number 2 seed, wins in round 1...you recieve 1 point.  They win in round 2...you receive an additional 1 point. etc... <br> <br>
             </div>
             @if (count($errors) > 0)
-                <div class="alert alert-danger">
+                <div class="alert alert-danger text-center col-md-12">
                     <ul>
                         @foreach ($errors->all() as $error)
                             <li>{{ $error }}</li>

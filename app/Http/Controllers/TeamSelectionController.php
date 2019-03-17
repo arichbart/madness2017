@@ -30,7 +30,7 @@ class TeamSelectionController extends Controller
 
     public function postTeams() {
     	$now = carbon::now();
-    	if ($now > "2018-03-15 16:15:00.000000") {
+    	if ($now > "2019-03-21 16:15:00.000000") {
     		return redirect('/pickTeams')
                         ->withErrors('You are too late.  Games have already started')
                         ->withInput();
@@ -47,7 +47,7 @@ class TeamSelectionController extends Controller
 
     	if($grandpaTL == 1 && ($grandpaBL == 17 || $grandpaTR == 33 || $grandpaBR == 49) || $grandpaBL == 17 && ($grandpaTL == 1 || $grandpaTR == 33 || $grandpaBR == 49) || $grandpaTR == 33 && ($grandpaTL == 1 || $grandpaBL == 17 || $grandpaBR == 49) || $grandpaBR == 49 && ($grandpaTL == 1 || $grandpaBL == 17 || $grandpaTR == 33)) {
     		return redirect('/pickTeams')
-                        ->withErrors('You can only Pick one team with a 1 seed')
+                        ->withErrors('You can only Pick one team with a 1 seed for Grandpa Scoring')
                         ->withInput();
     	}
 
@@ -109,7 +109,8 @@ class TeamSelectionController extends Controller
     	$myGrandpa = grandpa::where('user', auth::user()->id)
     		->get();
     	$mySpecial = special::where('user', auth::user()->id)
-    		->get();
+			->get();
+
     	return view('myTeams', compact('myGrandpa', 'mySpecial'));
     }
 }
