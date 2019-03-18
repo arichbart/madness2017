@@ -45,7 +45,7 @@
                     <br>
                     <h3 class="text-center">West</h3>
                     <select class="form-control" name="grandpaBL"> 
-                        <?php $x=17; ?>
+                        <?php $x=33; ?>
                         @foreach ($topRight as $team)
                             <option value="{{ $x }}">{{ $team->team_name }} {{ $team->seed }}</option>
                             <?php $x++ ?>
@@ -55,7 +55,7 @@
                 <div class="col-md-6 form-group">
                     <h3 class="text-center">South</h3>
                     <select class="form-control" name="grandpaTR"> 
-                        <?php $x=33; ?>
+                        <?php $x=17; ?>
                         @foreach ($bottomLeft as $team)
                             <option value="{{ $x }}">{{ $team->team_name }} {{ $team->seed }}</option>
                             <?php $x++ ?>
@@ -92,7 +92,7 @@
                     <br>
                     <h3 class="text-center">West</h3>
                     <select class="form-control" name="specialBL"> 
-                        <?php $x=17; ?>
+                        <?php $x=33; ?>
                         @foreach ($topRight as $team)
                             <option value="{{ $x }}">{{ $team->team_name }} {{ $team->seed }}</option>
                             <?php $x++ ?>
@@ -102,7 +102,7 @@
                 <div class="col-md-6 form-group">
                     <h3 class="text-center">South</h3>
                     <select class="form-control" name="specialTR"> 
-                        <?php $x=33; ?>
+                        <?php $x=17; ?>
                         @foreach ($bottomLeft as $team)
                             <option value="{{ $x }}">{{ $team->team_name }} {{ $team->seed }}</option>
                             <?php $x++ ?>
