@@ -18,9 +18,9 @@
             <table class="table table-hover table-bordered">
                 <tr>
                     <th>Name</th>
-                    <th>South</th>
-                    <th>West</th>
                     <th>East</th>
+                    <th>West</th>
+                    <th>South</th>
                     <th>Midwest</th>
                     <th>Total Points</th>
                 </tr>
@@ -41,9 +41,9 @@
             <table class="table table-hover table-bordered">
                 <tr>
                     <th>Name</th>
-                    <th>South</th>
-                    <th>West</th>
                     <th>East</th>
+                    <th>West</th>
+                    <th>South</th>
                     <th>Midwest</th>
                     <th>Total Points</th>
                 </tr>
