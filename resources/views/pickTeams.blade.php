@@ -31,6 +31,7 @@
                     </ul>
                 </div>
             @endif
+
             <form action="/myTeams" method="POST">
             {{ csrf_field() }}
                 <div class="col-md-6 form-group">
@@ -38,7 +39,7 @@
                     <select class="form-control" name="grandpaTL"> 
                         <?php $x=1; ?>
                         @foreach ($topLeft as $team)
-                            <option value="{{ $x }}">{{ $team->team_name }} {{ $team->seed }}</option>
+                            <option value="{{ $x }}" {{ old('grandpaTL') == $x ? 'selected' : '' }}>{{ $team->team_name }} {{ $team->seed }}</option>
                             <?php $x++ ?>
                         @endforeach
                     </select>
@@ -47,7 +48,7 @@
                     <select class="form-control" name="grandpaBL"> 
                         <?php $x=33; ?>
                         @foreach ($topRight as $team)
-                            <option value="{{ $x }}">{{ $team->team_name }} {{ $team->seed }}</option>
+                            <option value="{{ $x }}" {{ old('grandpaBL') == $x ? 'selected' : '' }}>{{ $team->team_name }} {{ $team->seed }}</option>
                             <?php $x++ ?>
                         @endforeach
                     </select>
@@ -57,7 +58,7 @@
                     <select class="form-control" name="grandpaTR"> 
                         <?php $x=17; ?>
                         @foreach ($bottomLeft as $team)
-                            <option value="{{ $x }}">{{ $team->team_name }} {{ $team->seed }}</option>
+                            <option value="{{ $x }}" {{ old('grandpaTR') == $x ? 'selected' : '' }}>{{ $team->team_name }} {{ $team->seed }}</option>
                             <?php $x++ ?>
                         @endforeach
                     </select>
@@ -66,7 +67,7 @@
                     <select class="form-control" name="grandpaBR"> 
                         <?php $x=49; ?>
                         @foreach ($bottomRight as $team)
-                            <option value="{{ $x }}">{{ $team->team_name }} {{ $team->seed }}</option>
+                            <option value="{{ $x }}" {{ old('grandpaBR') == $x ? 'selected' : '' }}>{{ $team->team_name }} {{ $team->seed }}</option>
                             <?php $x++ ?>
                         @endforeach
                     </select>

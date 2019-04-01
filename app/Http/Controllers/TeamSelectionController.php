@@ -31,77 +31,44 @@ class TeamSelectionController extends Controller
     public function postTeams() {
     	$now = carbon::now();
     	if ($now > "2019-03-21 16:15:00.000000") {
-    		return redirect('/pickTeams')
-                        ->withErrors('You are too late.  Games have already started')
-                        ->withInput();
+    		return back()
+				->withErrors('You are too late.  Games have already started')
+				->withInput();
     	}
 
-    	$grandpaTL = $_POST['grandpaTL'];
-    	$grandpaBL = $_POST['grandpaBL'];
-    	$grandpaTR = $_POST['grandpaTR'];
-    	$grandpaBR = $_POST['grandpaBR'];
-    	$specialTL = $_POST['specialTL'];
-    	$specialBL = $_POST['specialBL'];
-    	$specialTR = $_POST['specialTR'];
-    	$specialBR = $_POST['specialBR'];
+    	$grandpaTL = request('grandpaTL');
+    	$grandpaBL = request('grandpaBL');
+    	$grandpaTR = request('grandpaTR');
+    	$grandpaBR = request('grandpaBR');
+    	$specialTL = request('specialTL');
+    	$specialBL = request('specialBL');
+    	$specialTR = request('specialTR');
+    	$specialBR = request('specialBR');
 
-    	if($grandpaTL == 1 && ($grandpaBL == 17 || $grandpaTR == 33 || $grandpaBR == 49) || $grandpaBL == 17 && ($grandpaTL == 1 || $grandpaTR == 33 || $grandpaBR == 49) || $grandpaTR == 33 && ($grandpaTL == 1 || $grandpaBL == 17 || $grandpaBR == 49) || $grandpaBR == 49 && ($grandpaTL == 1 || $grandpaBL == 17 || $grandpaTR == 33)) {
-    		return redirect('/pickTeams')
-                        ->withErrors('You can only Pick one team with a 1 seed for Grandpa Scoring')
-                        ->withInput();
-    	}
-
-    	$grandpa = new grandpa;
-    	$grandpa->user = auth::user()->id;
-    	$grandpa->top_left_team = $grandpaTL;
-    	$grandpa->bottom_left_team = $grandpaBL;
-    	$grandpa->top_right_team = $grandpaTR;
-    	$grandpa->bottom_right_team = $grandpaBR;
-    	$user = grandpa::where('user', auth::user()->id)
-    		->get();
-		if(count($user) > 0){
-			if ($user[0]->user){
-				$user[0]->top_left_team = $grandpaTL;
-				$user[0]->bottom_left_team = $grandpaBL;
-				$user[0]->top_right_team = $grandpaTR;
-				$user[0]->bottom_right_team = $grandpaBR;
-				$user[0]->save();
-			} else {
-				$grandpa->save();
-			}
-		} else {
-			$grandpa->save();
-		}
+		$teamsWithOneSeed = [1, 17, 33, 49];
+		$grandpaTeamIds = [$grandpaTL, $grandpaBL, $grandpaTR, $grandpaBR];
 		
-    	
+    	if(count(array_intersect($teamsWithOneSeed, $grandpaTeamIds)) > 1) {
+    		return back()
+				->withErrors('You can only Pick one team with a 1 seed for Grandpa Scoring')
+				->withInput();
+    	}
 
-    	$special = new special;
-    	$special->user = auth::user()->id;
-    	$special->top_left_team = $specialTL;
-    	$special->bottom_left_team = $specialBL;
-    	$special->top_right_team = $specialTR;
-    	$special->bottom_right_team = $specialBR;
-    	$user = special::where('user', auth::user()->id)
-    		->get();
-		if(count($user) > 0){
-			if ($user[0]->user){
-				$user[0]->top_left_team = $specialTL;
-				$user[0]->bottom_left_team = $specialBL;
-				$user[0]->top_right_team = $specialTR;
-				$user[0]->bottom_right_team = $specialBR;
-				$user[0]->save();
-			} else {
-				$special->save();
-			}
-		} else {
-			$special->save();
-		}
-    	
-    	
+		grandpa::updateOrCreate(['user' => auth::user()->id], [
+			'top_left_team' => $grandpaTL,
+			'bottom_left_team' => $grandpaBL,
+			'top_right_team' => $grandpaTR,
+			'bottom_right_team' => $grandpaBR,
+		]);
+
+		auth()->user()->special()->updateOrCreate(['user' => auth::user()->id], [
+			'top_left_team' => $specialTL,
+			'bottom_left_team' => $specialBL,
+			'top_right_team' => $specialTR,
+			'bottom_right_team' => $specialBR,
+		]);
 
     	return redirect()->to('myTeams');
-    	
-    	
     }
 
     public function showMyTeams() {

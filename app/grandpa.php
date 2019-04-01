@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class grandpa extends Model
 {
+    protected $guarded = [];
+    
     public function team1() {
     	return $this->belongsTo('App\team', 'top_left_team', 'id');
     }
