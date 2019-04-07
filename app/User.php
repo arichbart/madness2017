@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\grandpa;
+use App\special;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -27,5 +29,13 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-     
+    public function special()
+    {
+        return $this->hasOne(special::class, 'user');
+    }
+
+    public function grandpa()
+    {
+        return $this->hasOne(grandpa::class, 'user');
+    }
 }
