@@ -4,15 +4,8 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-            </div>
-            <nav class="navbar navbar-default">
-                <a class="navbar-brand" href="/home">Home</a>
-                <a class="navbar-brand" href="/pickTeams">Make Selections</a>
-                <a class="navbar-brand" href="/myTeams">My Teams</a>
-                <a class="navbar-brand" href="/scoreboard">Scoreboard</a>
-                <a class="navbar-brand" href="/best">Best Teams</a>
-            </nav>
+            <div class="panel panel-default"/>
+            
             @if (count($errors) > 0)
                 <div class="alert alert-danger">
                     <ul>

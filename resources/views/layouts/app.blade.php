@@ -82,7 +82,19 @@
                 </div>
             </div>
         </nav>
-
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <nav class="navbar navbar-default">
+                        <a class="navbar-brand" href="/home">Home</a>
+                        <a class="navbar-brand" href="/pickTeams">Make Selections</a>
+                        <a class="navbar-brand" href="/myTeams">My Teams</a>
+                        <a class="navbar-brand" href="/scoreboard">Scoreboard</a>
+                        <a class="navbar-brand" href="/best">Best Teams</a>
+                    </nav>
+                </div> 
+            </div>
+        </div>
         @yield('content')
     </div>
 
