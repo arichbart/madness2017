@@ -95,6 +95,15 @@
                 </div> 
             </div>
         </div>
+        @if($errors->any())
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        {!! implode('', $errors->all('<div>:message</div>')) !!}
+                    </div> 
+                </div>
+            </div>
+        @endif
         @yield('content')
     </div>
 

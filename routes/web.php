@@ -1,5 +1,6 @@
 <?php
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,7 +15,9 @@ use Carbon\Carbon;
 Route::get('/', function () {
     return view('home');
 });
+
 Route::get('/pickTeams', 'TeamSelectionController@getTeams');
+
 
 
 Route::POST('/myTeams', 'TeamSelectionController@postTeams');

@@ -7,11 +7,16 @@ use Illuminate\Http\Request;
 use App\team;
 use App\grandpa;
 use App\special;
-use auth;
+use Illuminate\Support\Facades\Auth;
+// use auth;
 
 class TeamSelectionController extends Controller
 {
     public function getTeams() {
+		if (!Auth::check()) {
+			return redirect()->to('/home');
+		}
+			
     	$topLeft = team::where('region_id', 1)
     		->orderby('seed')
     		->get();
@@ -73,11 +78,24 @@ class TeamSelectionController extends Controller
 
     public function showMyTeams() {
 
-    	$myGrandpa = grandpa::where('user', auth::user()->id)
-    		->get();
-    	$mySpecial = special::where('user', auth::user()->id)
-			->get();
+		if (Auth::check()) {
+			$myGrandpa = grandpa::where('user', auth::user()->id)
+				->get();
+			$mySpecial = special::where('user', auth::user()->id)
+				->get();
 
-    	return view('myTeams', compact('myGrandpa', 'mySpecial'));
+			if($myGrandpa != null && $mySpecial != null){
+				return view('myTeams', compact('myGrandpa', 'mySpecial'));
+			}
+			else {
+				return redirect('/home')
+					->withErrors('Select teams first');
+			}
+		}
+		else {
+			return redirect('/home')
+				->withErrors('Login first');
+		}
+
     }
 }
