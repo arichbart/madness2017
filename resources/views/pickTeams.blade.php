@@ -28,7 +28,7 @@
             <form action="/myTeams" method="POST">
             {{ csrf_field() }}
                 <div class="col-md-6 form-group">
-                    <h3 class="text-center">East</h3>
+                    <h3 class="text-center">West</h3>
                     <select class="form-control" name="grandpaTL"> 
                         <?php $x=1; ?>
                         @foreach ($topLeft as $team)
@@ -37,7 +37,7 @@
                         @endforeach
                     </select>
                     <br>
-                    <h3 class="text-center">West</h3>
+                    <h3 class="text-center">East</h3>
                     <select class="form-control" name="grandpaBL"> 
                         <?php $x=33; ?>
                         @foreach ($topRight as $team)
