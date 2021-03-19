@@ -28,7 +28,7 @@
             </div>
 
             <div class="col-md-3">
-                <h3 class="text-center">West</h3>
+                <h3 class="text-center">East</h3>
                 <table class="table table-hover table-bordered">
                 <tr>
                     <th>Team</th>
@@ -46,7 +46,7 @@
             </div>
 
             <div class="col-md-3">
-                <h3 class="text-center">East</h3>
+                <h3 class="text-center">West</h3>
                 <table class="table table-hover table-bordered">
                 <tr>
                     <th>Team</th>
@@ -104,7 +104,7 @@
             </div>
 
             <div class="col-md-3">
-                <h3 class="text-center">West</h3>
+                <h3 class="text-center">East</h3>
                 <table class="table table-hover table-bordered">
                 <tr>
                     <th>Team</th>
@@ -122,7 +122,7 @@
             </div>
 
             <div class="col-md-3">
-                <h3 class="text-center">East</h3>
+                <h3 class="text-center">West</h3>
                 <table class="table table-hover table-bordered">
                 <tr>
                     <th>Team</th>

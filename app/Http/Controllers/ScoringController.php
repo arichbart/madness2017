@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\grandpa;
 use App\special;
 use App\team;
@@ -13,6 +14,23 @@ use App\overall;
 class ScoringController extends Controller
 {
     public function index(){
+		if (carbon::now() < "2021-03-19 16:15:00.000000" && Auth::user()->name != 'Aaron Richbart') {
+    		return redirect('/home')
+                        ->withErrors('Scoreboard will be available after the first game begins on Friday at 12:15pm Eastern');
+    	}
+		$overall = overall::all();
+		if($overall->isEmpty()) {
+			$users = User::all();
+
+			foreach ($users as $user) {
+				Overall::create([
+					'user_id' => $user->id,
+					'grandpa_score_total' => 0,
+					'seeded_score_total' => 0,
+					'overall_total' => 0,
+				]);
+			}
+		}
     	$teamsPre = team::all();
     	foreach ($teamsPre as $team) {
     		$grandpaScore = $team->wins;
@@ -62,13 +80,9 @@ class ScoringController extends Controller
         $totals = overall::all();
     	$grandpa = grandpa::all();
     	$special = special::all();
-    	$now = carbon::now();
-    	if ($now < "2021-03-19 16:15:00.000000") {
-    		return redirect('/home')
-                        ->withErrors('Scoreboard will be available after the first game begins on Friday at 12:15pm Eastern');
-    	} else {
-    		return view('scoreboard', compact('grandpa','special','totals'));
-    	}
+    	
+		return view('scoreboard', compact('grandpa','special','totals'));
+    	
 	    
 	}
 
