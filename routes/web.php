@@ -15,6 +15,9 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', function () {
     return view('home');
 });
+// Route::get('/test', function () {
+//     // Artisan::call('scoring:updateScores');
+// });
 
 Route::get('/pickTeams', 'TeamSelectionController@getTeams');
 
