@@ -32,10 +32,10 @@ class AutoScoreUpdate implements ShouldQueue
     public function handle()
     {
         $now = Carbon::now();
-        $startPM = Carbon::createFromTimeString('16:30'); // 2:30pm
+        $startPM = Carbon::createFromTimeString('15:30'); // 1:30pm
         $endPM = Carbon::createFromTimeString('24:00');
         $startAM = Carbon::createFromTimeString('00:30');
-        $endAM = Carbon::createFromTimeString('05:00');
+        $endAM = Carbon::createFromTimeString('06:01'); // 2:01 am
 
         if ($now->between($startPM, $endPM) || $now->between($startAM, $endAM)) {
             $today = $now->toDateString();
