@@ -13,8 +13,8 @@ use Illuminate\Support\Facades\Auth;
 class TeamSelectionController extends Controller
 {
     public function getTeams() {
-		$now = carbon::now();
-		if (!Auth::check() || $now > "2021-03-19 16:15:00.000000") {
+		$now = carbon::now(); 
+		if (!Auth::check() || $now > "2022-03-17 16:15:00.000000") { // 16:15 UTC = 12:15 EST after daylight savings
 			return redirect()->to('/home');
 		}
 			
