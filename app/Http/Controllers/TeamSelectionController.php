@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\team;
 use App\grandpa;
 use App\special;
+use App\overall;
 use Illuminate\Support\Facades\Auth;
 // use auth;
 
@@ -36,7 +37,7 @@ class TeamSelectionController extends Controller
 
     public function postTeams() {
     	$now = carbon::now();
-    	if ($now > "2021-03-19 16:15:00.000000") {
+    	if ($now > "2022-03-17 16:15:00.000000") {
     		return back()
 				->withErrors('You are too late.  Games have already started')
 				->withInput();
@@ -72,6 +73,11 @@ class TeamSelectionController extends Controller
 			'bottom_left_team' => $specialBL,
 			'top_right_team' => $specialTR,
 			'bottom_right_team' => $specialBR,
+		]);
+
+		overall::updateOrCreate(['user_id' => auth::user()->id], [
+			'user_id' => auth::user()->id,
+			'potential_score' => 0,
 		]);
 
     	return redirect()->to('myTeams');

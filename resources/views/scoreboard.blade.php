@@ -61,6 +61,7 @@
                     <th>Grandpa Total (x6)</th>
                     <th>Seeded Total</th>
                     <th>Grand Total</th>
+                    <th>Potential Final Score</th>
                 </tr>
                 @foreach ($totals->sortByDesc('overall_total') as $user)
                 <tr> 
@@ -68,6 +69,7 @@
                     <td>{{ $user->grandpa_score_total }}</td>
                     <td>{{ $user->seeded_score_total }}</td>
                     <td>{{ $user->overall_total }}</td>
+                    <td>{{ $user->potential_score }}</td>
                 </tr>
                 @endforeach
             </table>
