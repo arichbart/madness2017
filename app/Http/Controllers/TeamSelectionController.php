@@ -75,13 +75,13 @@ class TeamSelectionController extends Controller
 			'bottom_right_team' => $specialBR,
 		]);
 
-		overall::updateOrCreate(['user_id' => auth::user()->id], [
-			'user_id' => auth::user()->id,
-			'potential_score' => 0,
-			'grandpa_score_total' => 0,
-			'seeded_score_total' => 0,
-			'overall_total' => 0,
-		]);
+		// overall::updateOrCreate(['user_id' => auth::user()->id], [
+		// 	'user_id' => auth::user()->id,
+		// 	'potential_score' => 0,
+		// 	'grandpa_score_total' => 0,
+		// 	'seeded_score_total' => 0,
+		// 	'overall_total' => 0,
+		// ]);
 
     	return redirect()->to('myTeams');
     }
