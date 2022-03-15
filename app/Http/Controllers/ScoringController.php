@@ -347,20 +347,10 @@ class ScoringController extends Controller
 			elseif ($grandpaBottomRight->eliminated == false) {
 				$remainingBottomRight = $grandpaBottomRight;
 			}
-			var_dump('BEFORE 5 TL: ');
-			var_dump($remainingTopLeft);
-			var_dump('BEFORE 5 BL: ');
-			var_dump($remainingBottomLeft);
+
 			$this->evaluateLaterRounds(5,$remainingTopLeft,$remainingBottomLeft);
 			$this->evaluateLaterRounds(5,$remainingTopRight,$remainingBottomRight);
-			var_dump('AFTER 5 TL: ');
-			var_dump($remainingTopLeft);
-			var_dump('AFTER 5 BL: ');
-			var_dump($remainingBottomLeft);
-			// var_dump('TR: ');
-			// var_dump($remainingTopRight);
-			// var_dump('BR: ');
-			// var_dump($remainingBottomRight);
+
 			$remainingLeftTeam = null;
 			if ($remainingTopLeft != null && $remainingBottomLeft == null) {
 				$remainingLeftTeam = $remainingTopLeft;
@@ -581,8 +571,7 @@ class ScoringController extends Controller
 						$potentialTeamB = 6 + ($teamB->seed * 6);
 						$potentialTeamA = ($teamA->seed * 6);
 					}
-					var_dump('TEAM A Before :');
-					var_dump($teamA->potential_points);
+
 					// Since teamA has more potential remaining and is special type, only give special points
 					if ($potentialTeamA > $potentialTeamB) {
 						$this->giveSpecialPoints($teamA,$round);
@@ -594,8 +583,6 @@ class ScoringController extends Controller
 						$this->giveGrandpaPoints($teamB);
 						$teamA->eliminated = true;
 					}
-					var_dump('TEAM A AFTER :');
-					var_dump($teamA->potential_points);
 				}
 				// if both are special, award points to highest seed...if equal just give to A
 				elseif ($teamA->scoring_type == 'special' && $teamB->scoring_type == 'special') {
