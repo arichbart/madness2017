@@ -39,8 +39,8 @@
                     <br>
                     <h3 class="text-center">East</h3>
                     <select class="form-control" name="grandpaBL"> 
-                        <?php $x=33; ?>
-                        @foreach ($topRight as $team)
+                        <?php $x=17; ?>
+                        @foreach ($bottomLeft as $team)
                             <option value="{{ $x }}" {{ old('grandpaBL') == $x ? 'selected' : '' }}>{{ $team->team_name }} {{ $team->seed }}</option>
                             <?php $x++ ?>
                         @endforeach
@@ -49,8 +49,8 @@
                 <div class="col-md-6 form-group">
                     <h3 class="text-center">South</h3>
                     <select class="form-control" name="grandpaTR"> 
-                        <?php $x=17; ?>
-                        @foreach ($bottomLeft as $team)
+                        <?php $x=33; ?>
+                        @foreach ($topRight as $team)
                             <option value="{{ $x }}" {{ old('grandpaTR') == $x ? 'selected' : '' }}>{{ $team->team_name }} {{ $team->seed }}</option>
                             <?php $x++ ?>
                         @endforeach
@@ -86,8 +86,8 @@
                     <br>
                     <h3 class="text-center">West</h3>
                     <select class="form-control" name="specialBL"> 
-                        <?php $x=33; ?>
-                        @foreach ($topRight as $team)
+                        <?php $x=17; ?>
+                        @foreach ($bottomLeft as $team)
                             <option value="{{ $x }}">{{ $team->team_name }} {{ $team->seed }}</option>
                             <?php $x++ ?>
                         @endforeach
@@ -96,8 +96,8 @@
                 <div class="col-md-6 form-group">
                     <h3 class="text-center">South</h3>
                     <select class="form-control" name="specialTR"> 
-                        <?php $x=17; ?>
-                        @foreach ($bottomLeft as $team)
+                        <?php $x=33; ?>
+                        @foreach ($topRight as $team)
                             <option value="{{ $x }}">{{ $team->team_name }} {{ $team->seed }}</option>
                             <?php $x++ ?>
                         @endforeach

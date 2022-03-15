@@ -22,10 +22,10 @@ class TeamSelectionController extends Controller
     	$topLeft = team::where('region_id', 1)
     		->orderby('seed')
     		->get();
-    	$topRight = team::where('region_id', 2)
-    		->orderby('seed')
-    		->get();
-    	$bottomLeft = team::where('region_id', 3)
+			$bottomLeft = team::where('region_id', 2)
+				->orderby('seed')
+				->get();
+    	$topRight = team::where('region_id', 3)
     		->orderby('seed')
     		->get();
     	$bottomRight = team::where('region_id', 4)
