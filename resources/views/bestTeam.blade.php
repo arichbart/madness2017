@@ -10,25 +10,7 @@
         <div class="col-md-12">
             <h1 class="text-center">Team Seeded Scores</h1>
             <div class="col-md-3">
-                <h3 class="text-center">South</h3>
-                <table class="table table-hover table-bordered">
-                <tr>
-                    <th>Team</th>
-                    <th>Wins</th>
-                    <th>Seeded Score</th>
-                </tr>
-                @foreach ($eastTeams->sortByDesc('seeded_points') as $team)
-                <tr> 
-                    <td><strong>{{ $team->team_name }}</strong></td>
-                    <td>{{ $team->wins }}</td>
-                    <td>{{ $team->seeded_points }}</td>
-                </tr>
-                @endforeach
-            </table>
-            </div>
-
-            <div class="col-md-3">
-                <h3 class="text-center">East</h3>
+                <h3 class="text-center">West</h3>
                 <table class="table table-hover table-bordered">
                 <tr>
                     <th>Team</th>
@@ -46,14 +28,32 @@
             </div>
 
             <div class="col-md-3">
-                <h3 class="text-center">West</h3>
+                <h3 class="text-center">East</h3>
                 <table class="table table-hover table-bordered">
                 <tr>
                     <th>Team</th>
                     <th>Wins</th>
                     <th>Seeded Score</th>
                 </tr>
-                @foreach ($midWestTeams->sortByDesc('seeded_points') as $team)
+                @foreach ($eastTeams->sortByDesc('seeded_points') as $team)
+                <tr> 
+                    <td><strong>{{ $team->team_name }}</strong></td>
+                    <td>{{ $team->wins }}</td>
+                    <td>{{ $team->seeded_points }}</td>
+                </tr>
+                @endforeach
+            </table>
+            </div>
+
+            <div class="col-md-3">
+                <h3 class="text-center">South</h3>
+                <table class="table table-hover table-bordered">
+                <tr>
+                    <th>Team</th>
+                    <th>Wins</th>
+                    <th>Seeded Score</th>
+                </tr>
+                @foreach ($southTeams->sortByDesc('seeded_points') as $team)
                 <tr> 
                     <td><strong>{{ $team->team_name }}</strong></td>
                     <td>{{ $team->wins }}</td>
@@ -71,7 +71,7 @@
                     <th>Wins</th>
                     <th>Seeded Score</th>
                 </tr>
-                @foreach ($southTeams->sortByDesc('seeded_points') as $team)
+                @foreach ($midWestTeams->sortByDesc('seeded_points') as $team)
                 <tr> 
                     <td><strong>{{ $team->team_name }}</strong></td>
                     <td>{{ $team->wins }}</td>
@@ -86,25 +86,7 @@
         <div class="col-md-12">
             <h1 class="text-center">Team Grandpa Scores</h1>
             <div class="col-md-3">
-                <h3 class="text-center">South</h3>
-                <table class="table table-hover table-bordered">
-                <tr>
-                    <th>Team</th>
-                    <th>Wins</th>
-                    <th>Grandpa Score</th>
-                </tr>
-                @foreach ($eastTeams->sortByDesc('grandpa_points') as $team)
-                <tr> 
-                    <td><strong>{{ $team->team_name }}</strong></td>
-                    <td>{{ $team->wins }}</td>
-                    <td>{{ $team->grandpa_points }}</td>
-                </tr>
-                @endforeach
-            </table>
-            </div>
-
-            <div class="col-md-3">
-                <h3 class="text-center">East</h3>
+                <h3 class="text-center">West</h3>
                 <table class="table table-hover table-bordered">
                 <tr>
                     <th>Team</th>
@@ -122,14 +104,32 @@
             </div>
 
             <div class="col-md-3">
-                <h3 class="text-center">West</h3>
+                <h3 class="text-center">East</h3>
                 <table class="table table-hover table-bordered">
                 <tr>
                     <th>Team</th>
                     <th>Wins</th>
                     <th>Grandpa Score</th>
                 </tr>
-                @foreach ($midWestTeams->sortByDesc('grandpa_points') as $team)
+                @foreach ($eastTeams->sortByDesc('grandpa_points') as $team)
+                <tr> 
+                    <td><strong>{{ $team->team_name }}</strong></td>
+                    <td>{{ $team->wins }}</td>
+                    <td>{{ $team->grandpa_points }}</td>
+                </tr>
+                @endforeach
+            </table>
+            </div>
+
+            <div class="col-md-3">
+                <h3 class="text-center">South</h3>
+                <table class="table table-hover table-bordered">
+                <tr>
+                    <th>Team</th>
+                    <th>Wins</th>
+                    <th>Grandpa Score</th>
+                </tr>
+                @foreach ($southTeams->sortByDesc('grandpa_points') as $team)
                 <tr> 
                     <td><strong>{{ $team->team_name }}</strong></td>
                     <td>{{ $team->wins }}</td>
@@ -147,7 +147,7 @@
                     <th>Wins</th>
                     <th>Grandpa Score</th>
                 </tr>
-                @foreach ($southTeams->sortByDesc('grandpa_points') as $team)
+                @foreach ($midWestTeams->sortByDesc('grandpa_points') as $team)
                 <tr> 
                     <td><strong>{{ $team->team_name }}</strong></td>
                     <td>{{ $team->wins }}</td>
