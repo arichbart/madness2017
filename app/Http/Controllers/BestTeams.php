@@ -16,16 +16,16 @@ class BestTeams extends Controller
 					->withErrors('Best teams will be available after the first game begins on Friday at 12:15pm Eastern');
 			}
 
-			$eastTeams = team::where('region_id', 1)
+			$westTeams = team::where('region_id', 1)
 					->where('wins', '>', 0)
 					->get();
-			$westTeams = team::where('region_id', 2)
+			$eastTeams = team::where('region_id', 2)
 					->where('wins', '>', 0)
 					->get();
-			$midWestTeams = team::where('region_id', 3)
+			$southTeams = team::where('region_id', 3)
 					->where('wins', '>', 0)
 					->get();
-			$southTeams = team::where('region_id', 4)
+			$midWestTeams = team::where('region_id', 4)
 					->where('wins', '>', 0)
 					->get();
 
