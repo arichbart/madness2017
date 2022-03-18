@@ -56,21 +56,30 @@
         <div class="col-md-8 col-md-offset-2">
             <h1 class="text-center">Overall Scoring</h1>
             <table class="table table-hover table-bordered">
+                <colgroup>
+                    <col span="4" >
+                    <col style="background-color:lightgrey">
+                    <col>
+                </colgroup>
                 <tr>
+                    <th>Rank</th>
                     <th>Name</th>
                     <th>Grandpa Total (x6)</th>
                     <th>Seeded Total</th>
                     <th>Grand Total</th>
                     <th>Potential Final Score</th>
                 </tr>
+                <?php $overallRank = 1; ?>
                 @foreach ($totals->sortByDesc('overall_total') as $user)
                 <tr> 
+                    <td>{{ $overallRank }}</td>
                     <td><strong>{{ $user->getUser->name }}</strong></td>
                     <td>{{ $user->grandpa_score_total }}</td>
                     <td>{{ $user->seeded_score_total }}</td>
-                    <td>{{ $user->overall_total }}</td>
+                    <td><strong>{{ $user->overall_total }}</strong></td>
                     <td>{{ $user->potential_score }}</td>
                 </tr>
+                <?php $overallRank++; ?>
                 @endforeach
             </table>
         </div>
