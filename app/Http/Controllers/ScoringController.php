@@ -384,22 +384,22 @@ class ScoringController extends Controller
 			}
 			$this->evaluateLaterRounds(6,$remainingLeftTeam,$remainingRightTeam);
 
-			var_dump('GTL: ');
-			var_dump($grandpaTopLeft->potential_points);
-			var_dump('GBL: ');
-			var_dump($grandpaBottomLeft->potential_points);
-			var_dump('GTR: ');
-			var_dump($grandpaTopRight->potential_points);
-			var_dump('GBR: ');
-			var_dump($grandpaBottomRight->potential_points);
-			var_dump('STL: ');
-			var_dump($specialTopLeft->potential_points);
-			var_dump('SBL: ');
-			var_dump($specialBottomLeft->potential_points);
-			var_dump('STR: ');
-			var_dump($specialTopRight->potential_points);
-			var_dump('SBR: ');
-			var_dump($specialBottomRight->potential_points);
+			// var_dump('GTL: ');
+			// var_dump($grandpaTopLeft->potential_points);
+			// var_dump('GBL: ');
+			// var_dump($grandpaBottomLeft->potential_points);
+			// var_dump('GTR: ');
+			// var_dump($grandpaTopRight->potential_points);
+			// var_dump('GBR: ');
+			// var_dump($grandpaBottomRight->potential_points);
+			// var_dump('STL: ');
+			// var_dump($specialTopLeft->potential_points);
+			// var_dump('SBL: ');
+			// var_dump($specialBottomLeft->potential_points);
+			// var_dump('STR: ');
+			// var_dump($specialTopRight->potential_points);
+			// var_dump('SBR: ');
+			// var_dump($specialBottomRight->potential_points);
 
 			$potentialPointsRemaining = $grandpaTopLeft->potential_points + $grandpaBottomLeft->potential_points + $grandpaTopRight->potential_points + $grandpaBottomRight->potential_points + $specialTopLeft->potential_points + $specialBottomLeft->potential_points + $specialTopRight->potential_points + $specialBottomRight->potential_points;
 			$overallRow->potential_score = $overallRow->overall_total + $potentialPointsRemaining;
