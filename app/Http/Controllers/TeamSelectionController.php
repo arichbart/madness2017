@@ -15,7 +15,7 @@ class TeamSelectionController extends Controller
 {
     public function getTeams() {
 		$now = carbon::now(); 
-		if (!Auth::check() || $now > "2022-03-17 16:15:00.000000") { // 16:15 UTC = 12:15 EST after daylight savings
+		if (!Auth::check() || $now > "2023-03-16 16:15:00.000000") { // 16:15 UTC = 12:15 EST after daylight savings
 			return redirect()->to('/home');
 		}
 			
@@ -37,7 +37,7 @@ class TeamSelectionController extends Controller
 
     public function postTeams() {
     	$now = carbon::now();
-    	if ($now > "2022-03-17 16:15:00.000000") {
+    	if ($now > "2023-03-16 16:15:00.000000") {
     		return back()
 				->withErrors('You are too late.  Games have already started')
 				->withInput();
