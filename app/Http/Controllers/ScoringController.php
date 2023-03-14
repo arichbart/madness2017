@@ -16,7 +16,7 @@ class ScoringController extends Controller
 {
     public function index(){
 		if (Auth::check()) {
-			if (carbon::now() < "2022-03-17 16:15:00.000000" && Auth::user()->name != 'Aaron Richbart') {
+			if (carbon::now() < "2023-03-16 16:15:00.000000" && Auth::user()->name != 'Aaron Richbart') {
 				return redirect('/home')
 							->withErrors('Scoreboard will be available after the first game begins on Thursday at 12:15pm Eastern');
 			}
