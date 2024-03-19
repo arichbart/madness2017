@@ -11,10 +11,10 @@
             <table class="table table-hover table-bordered">
                 <tr>
                     <th>Name</th>
-                    <th>South</th>
                     <th>East</th>
-                    <th>Midwest</th>
                     <th>West</th>
+                    <th>South</th>
+                    <th>Midwest</th>
                     <th>Total Points</th>
                 </tr>
                 @foreach ($grandpa->sortByDesc('score') as $team)
@@ -34,10 +34,10 @@
             <table class="table table-hover table-bordered">
                 <tr>
                     <th>Name</th>
-                    <th>South</th>
                     <th>East</th>
-                    <th>Midwest</th>
                     <th>West</th>
+                    <th>South</th>
+                    <th>Midwest</th>
                     <th>Total Points</th>
                 </tr>
                 @foreach ($special->sortByDesc('score') as $team)
