@@ -32,12 +32,16 @@ class AutoScoreUpdate implements ShouldQueue
     public function handle()
     {
         $now = Carbon::now();
+        $currentHour = substr($now,11,2); // this returns just the hour from the now()
         $startPM = Carbon::createFromTimeString('15:30'); // 1:30pm
         // $endPM = Carbon::createFromTimeString('24:00');
         // $startAM = Carbon::createFromTimeString('00:30');
         $endAM = Carbon::createFromTimeString('06:01'); // 2:01 am
 
-        if (!$now->between($endAM, $startPM)) {
+        // 2024 added the modulus to only do the even hours for the callout
+        // you get 20 free callouts per day, so since we have 2 servers, we need half the callouts or we pass the 20
+        // in the future we should add a game invite token and have everything on one server
+        if (!$now->between($endAM, $startPM) && $currentHour % 2 == 0) {
         // if ($now->between($startPM, $endPM) || $now->between($startAM, $endAM)) {
             $today = $now->toDateString();
             $yesterday = Carbon::yesterday()->toDateString();
