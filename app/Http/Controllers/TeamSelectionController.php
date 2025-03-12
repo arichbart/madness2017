@@ -15,7 +15,7 @@ class TeamSelectionController extends Controller
 {
     public function getTeams() {
 		$now = carbon::now(); 
-		if (!Auth::check() || $now > "2024-03-21 16:15:00.000000") { // 16:15 UTC = 12:15 EST after daylight savings
+		if (!Auth::check() || $now > "2025-03-20 16:15:00.000000") { // 16:15 UTC = 12:15 EST after daylight savings
 			return redirect()->to('/home');
 		}
 			
