@@ -37,7 +37,7 @@ class TeamSelectionController extends Controller
 
     public function postTeams() {
     	$now = carbon::now();
-    	if ($now > "2024-03-21 16:15:00.000000") {
+    	if ($now > "2025-03-20 16:15:00.000000") {
     		return back()
 				->withErrors('You are too late.  Games have already started')
 				->withInput();
