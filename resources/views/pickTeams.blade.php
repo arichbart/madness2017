@@ -28,7 +28,7 @@
             <form action="/myTeams" method="POST">
             {{ csrf_field() }}
                 <div class="col-md-6 form-group">
-                    <h3 class="text-center">East</h3>
+                    <h3 class="text-center">South</h3>
                     <select class="form-control" name="grandpaTL"> 
                         <?php $x=1; ?>
                         @foreach ($topLeft as $team)
@@ -47,7 +47,7 @@
                     </select>
                 </div>
                 <div class="col-md-6 form-group">
-                    <h3 class="text-center">South</h3>
+                    <h3 class="text-center">East</h3>
                     <select class="form-control" name="grandpaTR"> 
                         <?php $x=33; ?>
                         @foreach ($topRight as $team)
@@ -75,7 +75,7 @@
                 <strong>Example:</strong> Duke, a number 2 seed, wins in round 1...you recieve 2 points.  They win in round 2...you receive an additional 4 points.  They win in round 3...you receive an additional 6 points. etc... <br> <br>
                 </div>
                 <div class="col-md-6 form-group">
-                    <h3 class="text-center">East</h3>
+                    <h3 class="text-center">South</h3>
                     <select class="form-control" name="specialTL"> 
                         <?php $x=1; ?>
                         @foreach ($topLeft as $team)
@@ -94,7 +94,7 @@
                     </select>
                 </div>
                 <div class="col-md-6 form-group">
-                    <h3 class="text-center">South</h3>
+                    <h3 class="text-center">East</h3>
                     <select class="form-control" name="specialTR"> 
                         <?php $x=33; ?>
                         @foreach ($topRight as $team)
